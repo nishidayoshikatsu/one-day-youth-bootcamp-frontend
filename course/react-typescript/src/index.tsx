@@ -14,9 +14,10 @@ const App: React.VFC = () => {
   // ページマウント時にモックAPIからデータを取得
 
   return (
-    <div>
+    <div style={{ width: '700px', margin: '0 auto' }}>
       {/* ヘッダー */}
       <h1>Tutorial Works</h1>
+      <h2>React Todo List</h2>
 
       {/* 一覧表示 */}
       <TaskList />
