@@ -17,9 +17,14 @@ export const TaskForm: React.FC<Props> = ({
   // フォームの値を保持する
   const handleNewTaskLabel = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewTaskLabel(e.target.value);
-    console.info(newTaskLabel);
   };
+
   // Taskの登録
+  const handleAddTask = () => {
+    const newTask = { label: newTaskLabel, isDone: false }
+    setTasks([...tasks, newTask]);
+    setNewTaskLabel('');
+  }
 
   // 完了したTaskを削除する
 
@@ -31,6 +36,7 @@ export const TaskForm: React.FC<Props> = ({
         value={newTaskLabel}
         placeholder="Enter the task"
       />
+      <button onClick={handleAddTask}>Add</button>
     </>
   );
 };
