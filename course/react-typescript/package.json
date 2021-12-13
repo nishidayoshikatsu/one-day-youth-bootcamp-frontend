@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
     "@types/react": "^17.0.34",
@@ -13,6 +14,7 @@
   },
   "devDependencies": {
     "babel-loader": "^8.2.3",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",
