@@ -9,6 +9,12 @@ export const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
   // Taskの状態を切り替える
 
   return (
-    <></>
+    <ul>
+      {tasks.map((task, index) =>(
+        <li key={`todo-${index}`}>
+          {task.isDone ? <s>{task.label}</s> : task.label}
+        </li>
+      ))}
+    </ul>
   );
 };
