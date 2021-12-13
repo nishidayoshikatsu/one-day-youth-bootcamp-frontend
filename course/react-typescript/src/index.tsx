@@ -3,8 +3,7 @@ import ReactDOM from "react-dom";
 import { TaskList } from './components/TaskList';
 import { TaskForm } from './components/TaskForm';
 
-// TODOタスクの型
-export type Task = {}
+export type Task = { label: string; isDone: boolean };
 
 const App: React.VFC = () => {
   // タスクリストを格納する
