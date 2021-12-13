@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { TaskList } from './components/TaskList';
 import { TaskForm } from './components/TaskForm';
@@ -7,9 +7,9 @@ export type Task = { label: string; isDone: boolean };
 
 const App: React.VFC = () => {
   // タスクリストを格納する
-
+  const [tasks, setTasks] = useState<Task[]>([])
   // 追加前のタスクを格納する
-
+  const [newTaskLabel, setNewTaskLabel] = useState<string>('')
   // ページマウント時にモックAPIからデータを取得
 
   return (
