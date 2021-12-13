@@ -23,10 +23,10 @@ const App: React.VFC = () => {
       <h2>React Todo List</h2>
 
       {/* 一覧表示 */}
-      <TaskList />
+      <TaskList {...{ tasks, setTasks }} />
 
       {/* タスク追加、削除 */}
-      <TaskForm />
+      <TaskForm {...{ tasks, setTasks, newTaskLabel, setNewTaskLabel }} />
     </div>
   );
 };
