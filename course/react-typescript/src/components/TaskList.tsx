@@ -5,7 +5,7 @@ type Props = {
   tasks: Task[];
   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 }
-export const TaskList: React.FC = () => {
+export const TaskList: React.FC<Props> = ({ tasks, setTasks }) => {
   // Taskの状態を切り替える
 
   return (
