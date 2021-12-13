@@ -27,6 +27,10 @@ export const TaskForm: React.FC<Props> = ({
   }
 
   // 完了したTaskを削除する
+  const handleClearTasks = () => {
+    const newTasks = tasks.filter((task) => !task.isDone);
+    setTasks(newTasks);
+  }
 
   return (
     <>
@@ -37,6 +41,8 @@ export const TaskForm: React.FC<Props> = ({
         placeholder="Enter the task"
       />
       <button onClick={handleAddTask}>Add</button>
+      <br />
+      <button onClick={handleClearTasks}>Clear</button>
     </>
   );
 };
