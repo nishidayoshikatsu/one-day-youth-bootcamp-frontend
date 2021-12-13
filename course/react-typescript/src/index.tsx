@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import { request } from './server'
 import { TaskList } from './components/TaskList';
 import { TaskForm } from './components/TaskForm';
 
@@ -11,6 +12,9 @@ const App: React.VFC = () => {
   // 追加前のタスクを格納する
   const [newTaskLabel, setNewTaskLabel] = useState<string>('')
   // ページマウント時にモックAPIからデータを取得
+  useEffect(() => {
+    request.fetchTasks((payload: Task[]) => setTasks(payload) );
+  }, [])
 
   return (
     <div style={{ width: '700px', margin: '0 auto' }}>
